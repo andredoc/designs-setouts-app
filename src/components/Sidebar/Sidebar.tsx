@@ -1,7 +1,9 @@
-import { FaTh, FaUserAlt, FaRegChartBar, FaBars } from "react-icons/fa"
+import { FaBars, FaMedapps } from "react-icons/fa"
+import { VscEdit } from "react-icons/vsc"
 import {NavLink} from 'react-router-dom'
 import "./Sidebar.scss"
 import {useState} from 'react'
+
 
 const Sidebar = ({children} : {children:any})=> {
 
@@ -10,19 +12,14 @@ const Sidebar = ({children} : {children:any})=> {
 
     const menuItem=[
         {
-            path:"/",
-            name:"Home",
-            icon:<FaTh/>
-        },
-        {
             path: "/designs",
             name: "Designs",
-            icon: <FaUserAlt/>
+            icon: <FaMedapps/>
         },
         {
             path: "/setouts",
             name: "Setouts",
-            icon: <FaRegChartBar/>
+            icon: <VscEdit/>
         },
     ]
 

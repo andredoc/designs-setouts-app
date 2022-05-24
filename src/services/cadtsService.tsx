@@ -1,7 +1,9 @@
 import axios, { AxiosInstance, AxiosResponse } from 'axios'
 import { IDesign } from '../models/design.model';
 import { ISetout } from '../models/setouts.model';
+import { IUser } from '../models/user.model'
 
+const designId = 19;
 class CadtService {
     api:AxiosInstance;
 
@@ -15,17 +17,24 @@ class CadtService {
         return data;
     }
 
-    // When calling .then() , we get httpResponse
-    // getAllSetouts(): Promise<AxiosResponse>{
-    //     return this.api.get<ISetout[]>('/setouts')
-    // }
-    async getAllSetouts(): Promise<ISetout[]> {
-        const { data } = await this.api.get('/setouts');
+    //When calling .then() , we get httpResponse
+    getAllSetouts(): Promise<AxiosResponse>{
+        return this.api.get<ISetout[]>('/setouts')
+    }
+ 
+    async getAllUsers(): Promise<IUser[]> {
+        const { data } = await this.api.get('/users');
         return data;
     }
 
-    getAllUsers() {
-        return this.api.get('/users')
+    async updateDesign(design:IDesign): Promise<any> {
+        const {data} = await this.api.put(`/designs/${design.id}`, design);
+        return data;
+    }
+
+    async updateSetout(setout: ISetout): Promise<any> {
+        const { data } = await this.api.put(`/setouts/${setout.id}`, setout);
+        return data;
     }
 }
 

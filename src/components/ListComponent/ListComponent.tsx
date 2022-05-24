@@ -1,7 +1,7 @@
 import {Table} from 'reactstrap';
 import { ITableConfig } from '../../models/table.model';
 
-const GroupTable = ({ tableConfig, data }: { tableConfig: ITableConfig[], data:any[]})=>{
+const ListComponent = ({ tableConfig, data }: { tableConfig: ITableConfig[], data:any[]})=>{
 
     return (
          <>
@@ -36,4 +36,4 @@ const GroupTable = ({ tableConfig, data }: { tableConfig: ITableConfig[], data:a
     )
 }
 
-export default GroupTable
+export default ListComponent 

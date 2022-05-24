@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { ISetout } from '../models/setouts.model'
 import cadtsService from '../services/cadtsService'
 import { ITableConfig } from '../models/table.model'
-import GroupTable from '../components/GroupTable/GroupTable'
+import ListComponent from '../components/ListComponent/ListComponent'
 
 const SetoutsPage = () => {
 
@@ -38,7 +38,7 @@ const SetoutsPage = () => {
     const loadSetouts = () => {
         cadtsService
             .getAllSetouts()
-            .then((data) => {
+            .then(({data}) => {
                 const processData = data.map(({ courses, id, machine_name, machine_width, name, updated }: ISetout) => {
                     return {
                         courses,
@@ -46,7 +46,7 @@ const SetoutsPage = () => {
                         machine_name,
                         machine_width,
                         name,
-                        updated: new Date(updated).toLocaleDateString(),
+                        updated: new Date(updated).toLocaleDateString('en'),
                     };
                 })
                 setAditionalData(processData)
@@ -57,7 +57,7 @@ const SetoutsPage = () => {
     return (
         <div>
             <h1>Setouts Page</h1>
-            <GroupTable tableConfig={tableConfig} data={aditionalData} />
+            <ListComponent  tableConfig={tableConfig} data={aditionalData} />
         </div>
     )
 }

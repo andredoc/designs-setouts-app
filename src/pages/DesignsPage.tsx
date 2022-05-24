@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
-import GroupTable from '../components/GroupTable/GroupTable'
+import ListComponent from '../components/ListComponent/ListComponent'
 import cadtsService from '../services/cadtsService'
 import { IDesign } from '../models/design.model';
 import { ITableConfig } from '../models/table.model';
+import EditDataForm from '../components/EditDataForm/EditDataForm';
 
 const DesignsPage =()=>{
     const [designs, setDesigns] = useState<IDesign[]>([])
@@ -44,7 +45,7 @@ const DesignsPage =()=>{
                         id,
                         name,
                         status,
-                        updated: new Date(updated).toLocaleDateString(),
+                        updated: new Date(updated).toLocaleDateString('en'),
                         user_id_last_update,
                         wales
                     };
@@ -57,7 +58,8 @@ const DesignsPage =()=>{
     return (
         <div>
             <h1>Designs Page</h1>
-            <GroupTable tableConfig={tableConfig} data={designs}/>
+            <EditDataForm />
+            <ListComponent  tableConfig={tableConfig} data={designs}/>
         </div>
     )
 }

@@ -3,6 +3,7 @@ import { ISetout } from '../models/setouts.model'
 import cadtsService from '../services/cadtsService'
 import { ITableConfig } from '../models/table.model'
 import ListComponent from '../components/ListComponent/ListComponent'
+import SetoutsRow from '../components/SetoutsRow/SetoutsRow'
 
 const SetoutsPage = () => {
 
@@ -57,7 +58,11 @@ const SetoutsPage = () => {
     return (
         <div>
             <h1>Setouts Page</h1>
-            <ListComponent  tableConfig={tableConfig} data={aditionalData} />
+            <ListComponent  
+                tableConfig={tableConfig} 
+                data={aditionalData} 
+                renderRow={(setout:ISetout)=>(<SetoutsRow setout={setout} key={setout.id}/>)}
+                />
         </div>
     )
 }

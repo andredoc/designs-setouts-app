@@ -1,7 +1,9 @@
+import { useState } from 'react';
 import {Table} from 'reactstrap';
 import { ITableConfig } from '../../models/table.model';
+import DesignsRow from '../DesignsRow/DesignsRow';
 
-const ListComponent = ({ tableConfig, data }: { tableConfig: ITableConfig[], data:any[]})=>{
+const ListComponent = ({ tableConfig, renderRow, data }: { tableConfig: ITableConfig[], renderRow:({}:any)=>(JSX.Element), data:any[]})=>{
 
     return (
          <>
@@ -17,15 +19,11 @@ const ListComponent = ({ tableConfig, data }: { tableConfig: ITableConfig[], dat
               </thead>
               <tbody>
                 {
-                  data.map((object) => (
-                    <tr key={object.id}>
-                        {
-                          tableConfig.map(({ rowProperty }, index) => (
-                            <th key={index}>{object[rowProperty]}</th>
-                          ))
-                        }
-                      </tr>
-                    )
+                  data.map((item) => 
+                    {
+                    return renderRow(item)
+                    }
+                    
                   )
                 }
               </tbody>

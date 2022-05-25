@@ -3,7 +3,7 @@ import ListComponent from '../components/ListComponent/ListComponent'
 import cadtsService from '../services/cadtsService'
 import { IDesign } from '../models/design.model';
 import { ITableConfig } from '../models/table.model';
-import EditDataForm from '../components/EditDataForm/EditDataForm';
+import DesignsRow from '../components/DesignsRow/DesignsRow';
 
 const DesignsPage =()=>{
     const [designs, setDesigns] = useState<IDesign[]>([])
@@ -58,8 +58,11 @@ const DesignsPage =()=>{
     return (
         <div>
             <h1>Designs Page</h1>
-            <EditDataForm />
-            <ListComponent  tableConfig={tableConfig} data={designs}/>
+            <ListComponent 
+                tableConfig={tableConfig} 
+                data={designs}
+                renderRow={(design:IDesign) => <DesignsRow design={design} key={design.id}/>}
+                />
         </div>
     )
 }

@@ -27,7 +27,7 @@
     "server": "json-server db.json --port 5000",
     "rundevel": "concurrently \"npm start\" \"npm run server\"",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --collectCoverage --watchAll=false",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

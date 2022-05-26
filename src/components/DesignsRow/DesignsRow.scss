@@ -1,4 +1,24 @@
+label {
+    width: 120px;
+    margin: 5px;
+}
 
+input {
+    margin: 5px;
+}
 
+.img{ 
+    vertical-align: text-top;
+}
+
+.by {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 20px;
+    background-color: #7ec3b9;
+    color: white;
+}
 
 

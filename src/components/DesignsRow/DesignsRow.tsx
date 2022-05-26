@@ -3,6 +3,8 @@ import { IDesign } from "../../models/design.model"
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import { IModalConfig } from "../../models/modal.model";
 import cadtsService from '../../services/cadtsService'
+import './DesignsRow.scss'
+import { FaMedapps } from "react-icons/fa"
 
 const DesignsRow = ({design, modalConfig={fullscreen:false, size:undefined, backdrop:true,fade:true, centered:true, scrollable:false}}:{design:IDesign, modalConfig?: IModalConfig})=>{
 
@@ -48,26 +50,26 @@ const DesignsRow = ({design, modalConfig={fullscreen:false, size:undefined, back
                 <td>{designToRender.updated}</td>
                 <td>{designToRender.user_id_last_update}</td>
                 <Modal isOpen={modalOpen} toggle={toggleModal} {...modalConfig}>
-                    <ModalHeader toggle={toggleModal}>Update Row</ModalHeader>
+                <ModalHeader toggle={toggleModal}>Update Design <FaMedapps className="img"/></ModalHeader>
                     <ModalBody>
-                            <div>
-                                <label className="labelModal" htmlFor="name">Name: </label>
+                            <div >
+                                <label htmlFor="name">Name: </label>
                                 <input type="text" value={updatedDesign.name} name="name" onChange={handleOnChange} />
                             </div>
                             <div>
-                                <label className="labelModal" htmlFor="courses">Courses: </label>
+                                <label htmlFor="courses">Courses: </label>
                                 <input type="text" value={updatedDesign.courses} name="courses" onChange={handleOnChange} />
                             </div>
                             <div>
-                                <label className="labelModal" htmlFor="wales">Wales: </label>
+                                <label htmlFor="wales">Wales: </label>
                                 <input type="number" value={updatedDesign.wales} name="wales" onChange={handleOnChange} />
                             </div>
                             <div>
-                                <label className="labelModal" htmlFor="updated">Last Updated: </label>
+                                <label htmlFor="updated">Last Updated: </label>
                                 <input type="text" value={updatedDesign.updated} name="updated" onChange={handleOnChange} />
                             </div>
                             <div>
-                                <label className="labelModal" htmlFor="user_id_last_update">By: </label>
+                                <label htmlFor="user_id_last_update">By: </label>
                                 <input type="text" value={updatedDesign.user_id_last_update} name="user_id_last_update" onChange={handleOnChange} />
                             </div>
                     </ModalBody>

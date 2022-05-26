@@ -3,6 +3,8 @@ import { ISetout } from "../../models/setouts.model"
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import { IModalConfig } from "../../models/modal.model";
 import cadtsService from "../../services/cadtsService";
+import './SetoutsRow.scss'
+import { VscEdit } from "react-icons/vsc"
 
 const SetoutsRow = ({ setout, modalConfig = { fullscreen: false, size: undefined, backdrop: true, fade: true, centered: true, scrollable: false } }: { setout: ISetout, modalConfig?: IModalConfig}) => {
     const [modalOpen, setModalOpen] = useState(false)
@@ -46,26 +48,26 @@ const SetoutsRow = ({ setout, modalConfig = { fullscreen: false, size: undefined
             <td>{setoutToRender.courses}</td>
             <td>{setoutToRender.updated}</td>
             <Modal isOpen={modalOpen} toggle={toggleModal} {...modalConfig}>
-                <ModalHeader toggle={toggleModal}>Modal title</ModalHeader>
+                <ModalHeader toggle={toggleModal}>Update Setout <VscEdit className="img"/></ModalHeader>
                 <ModalBody>
                     <div>
-                        <label className="labelModal" htmlFor="name">Name: </label>
+                        <label htmlFor="name">Name: </label>
                         <input type="text" value={updatedSetout.name} name="name" onChange={handleOnChange} />
                     </div>
                     <div>
-                        <label className="labelModal" htmlFor="machine_name">Machine Name: </label>
+                        <label htmlFor="machine_name">Machine Name: </label>
                         <input type="text" value={updatedSetout.machine_name} name="machine_name" onChange={handleOnChange} />
                     </div>
                     <div>
-                        <label className="labelModal" htmlFor="machine_width">Machine Width: </label>
+                        <label htmlFor="machine_width">Machine Width: </label>
                         <input type="number" value={updatedSetout.machine_width} name="machine_width" onChange={handleOnChange} />
                     </div>
                     <div>
-                        <label className="labelModal" htmlFor="courses">Courses: </label>
+                        <label htmlFor="courses">Courses: </label>
                         <input type="text" value={updatedSetout.courses} name="courses" onChange={handleOnChange} />
                     </div>
                     <div>
-                        <label className="labelModal" htmlFor="updated">Last Updated: </label>
+                        <label htmlFor="updated">Last Updated: </label>
                         <input type="text" value={updatedSetout.updated} name="updated" onChange={handleOnChange} />
                     </div>
                 </ModalBody>

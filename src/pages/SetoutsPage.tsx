@@ -57,7 +57,7 @@ const SetoutsPage = () => {
 
     return (
         <div>
-            <h1>Setouts Page</h1>
+            <h3>Setouts Page</h3>
             <ListComponent  
                 tableConfig={tableConfig} 
                 data={aditionalData} 

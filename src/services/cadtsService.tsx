@@ -3,7 +3,6 @@ import { IDesign } from '../models/design.model';
 import { ISetout } from '../models/setouts.model';
 import { IUser } from '../models/user.model'
 
-const designId = 19;
 class CadtService {
     api:AxiosInstance;
 

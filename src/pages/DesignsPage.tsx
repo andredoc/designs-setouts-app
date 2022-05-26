@@ -57,7 +57,7 @@ const DesignsPage =()=>{
 
     return (
         <div>
-            <h1>Designs Page</h1>
+            <h3>Designs Page</h3>
             <ListComponent 
                 tableConfig={tableConfig} 
                 data={designs}

@@ -48,7 +48,9 @@ const DesignsRow = ({design, modalConfig={fullscreen:false, size:undefined, back
                 <td>{designToRender.courses}</td>
                 <td>{designToRender.wales}</td>
                 <td>{designToRender.updated}</td>
-                <td>{designToRender.user_id_last_update}</td>
+                <td className="by">
+                    {designToRender.user_id_last_update}
+                </td>
                 <Modal isOpen={modalOpen} toggle={toggleModal} {...modalConfig}>
                 <ModalHeader toggle={toggleModal}>Update Design <FaMedapps className="img"/></ModalHeader>
                     <ModalBody>

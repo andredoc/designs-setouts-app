@@ -1,7 +1,5 @@
-import { useState } from 'react';
 import {Table} from 'reactstrap';
 import { ITableConfig } from '../../models/table.model';
-import DesignsRow from '../DesignsRow/DesignsRow';
 
 const ListComponent = ({ tableConfig, renderRow, data }: { tableConfig: ITableConfig[], renderRow:({}:any)=>(JSX.Element), data:any[]})=>{
 
@@ -22,8 +20,7 @@ const ListComponent = ({ tableConfig, renderRow, data }: { tableConfig: ITableCo
                   data.map((item) => 
                     {
                     return renderRow(item)
-                    }
-                    
+                    }                   
                   )
                 }
               </tbody>

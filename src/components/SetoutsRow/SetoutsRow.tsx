@@ -72,8 +72,8 @@ const SetoutsRow = ({ setout, modalConfig = { fullscreen: false, size: undefined
                     </div>
                 </ModalBody>
                 <ModalFooter>
-                    <Button color="primary" onClick={handleSubmit}  >Update</Button>{' '}
-                    <Button color="secondary" onClick={toggleModal}>Cancel</Button>
+                    <Button color="success" outline onClick={handleSubmit}  >Update</Button>{' '}
+                    <Button color="danger" outline onClick={toggleModal}>Cancel</Button>
                 </ModalFooter>
             </Modal>
         </tr>     

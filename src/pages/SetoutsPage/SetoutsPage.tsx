@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react'
-import { ISetout } from '../models/setouts.model'
-import cadtsService from '../services/cadtsService'
-import { ITableConfig } from '../models/table.model'
-import ListComponent from '../components/ListComponent/ListComponent'
-import SetoutsRow from '../components/SetoutsRow/SetoutsRow'
+import { ISetout } from '../../models/setouts.model'
+import cadtsService from '../../services/cadtsService'
+import { ITableConfig } from '../../models/table.model'
+import ListComponent from '../../components/ListComponent/ListComponent'
+import SetoutsRow from '../../components/SetoutsRow/SetoutsRow'
+import './SetoutsPage.scss'
 
 const SetoutsPage = () => {
 
@@ -57,7 +58,7 @@ const SetoutsPage = () => {
 
     return (
         <div>
-            <h3>Setouts Page</h3>
+            <h3 className="title">Setouts Page</h3>
             <ListComponent  
                 tableConfig={tableConfig} 
                 data={aditionalData} 

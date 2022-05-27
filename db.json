@@ -335,12 +335,12 @@
       "courses": 1000
     },
     {
+      "courses": 2000,
       "id": 20,
-      "updated": "2021-04-12 08:44:31.810221",
-      "name": "10th Setout",
       "machine_name": "RSJ_4_1_ON",
       "machine_width": 4000,
-      "courses": 2000
+      "name": "20th Setout",
+      "updated": "4/12/2021"
     }
   ],
   "users": [

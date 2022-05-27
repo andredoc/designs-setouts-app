@@ -39,7 +39,6 @@ const DesignsRow = ({design, modalConfig={fullscreen:false, size:undefined, back
                 })
                 toggleModal()
             })
-
     }
 
     return (
@@ -49,7 +48,7 @@ const DesignsRow = ({design, modalConfig={fullscreen:false, size:undefined, back
                 <td>{designToRender.wales}</td>
                 <td>{designToRender.updated}</td>
                 <td className="by">
-                    {designToRender.user_id_last_update}
+                    {designToRender.userInitials}
                 </td>
                 <Modal isOpen={modalOpen} toggle={toggleModal} {...modalConfig}>
                 <ModalHeader toggle={toggleModal}>Update Design <FaMedapps className="img"/></ModalHeader>
@@ -70,19 +69,14 @@ const DesignsRow = ({design, modalConfig={fullscreen:false, size:undefined, back
                                 <label htmlFor="updated">Last Updated: </label>
                                 <input type="text" value={updatedDesign.updated} name="updated" onChange={handleOnChange} />
                             </div>
-                            <div>
-                                <label htmlFor="user_id_last_update">By: </label>
-                                <input type="text" value={updatedDesign.user_id_last_update} name="user_id_last_update" onChange={handleOnChange} />
-                            </div>
                     </ModalBody>
                     <ModalFooter>
-                        <Button color="primary" onClick={handleSubmit} >Update</Button>{' '}
-                        <Button color="secondary" onClick={toggleModal}>Cancel</Button>
+                        <Button color="success" outline onClick={handleSubmit} >Update</Button>{' '}
+                        <Button color="danger" outline onClick={toggleModal}>Cancel</Button>
                     </ModalFooter>
                 </Modal>
             </tr>   
     )
-
 }
 
 export default DesignsRow

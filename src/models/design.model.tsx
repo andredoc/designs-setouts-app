@@ -5,5 +5,6 @@ export interface IDesign {
     status:string,
     updated:string,
     user_id_last_update: number,
+    userInitials?: string,
     wales:number
 }

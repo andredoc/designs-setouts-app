@@ -1,6 +1,6 @@
 import {Routes, Route} from 'react-router-dom'
-import DesignsPage from '../pages/DesignsPage';
-import SetoutsPage from '../pages/SetoutsPage';
+import DesignsPage from '../pages/DesignsPage/DesignsPage';
+import SetoutsPage from '../pages/SetoutsPage/SetoutsPage';
 
 const AppRoutes = ()=>{
     return (
